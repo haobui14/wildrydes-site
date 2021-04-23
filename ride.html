@@ -22,7 +22,8 @@
 
     <div class="info panel panel-default">
         <div class="panel-heading">
-            <button id="request" class="btn btn-primary" disabled="disabled">Set pickup</button>
+            <button onclick="document.getElementsByTagName('audio')[0].pause();" id="request" class="btn btn-primary" disabled="disabled">Set pickup</button>
+            <audio autoplay preload="auto" loop ><source src="./audio/horse.mp3"></audio>
             <div class="dropdown pull-right">
                 <button id="accountLink" class="btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Account <span class="caret"></span>
