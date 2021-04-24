@@ -46,12 +46,14 @@ function completeRequest(result) {
     console.log('Response received from API: ', result);
     unicorn = result.Unicorn;
     pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-    unicorn.Exp = Number(unicorn.Exp) + 10;
-    if(Number(unicorn.Exp) === 50) {
-        unicorn.Level = Number(unicorn.Level) + 1;
-        unicorn.Exp = 0;
+    exp = Number(unicorn.Exp);
+    level = Number(unicorn.Level);
+    exp = exp + 10;
+    if(exp === 50) {
+        level = level + 1;
+        exp = 0;
     }
-    displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + unicorn.Level + ' Current Exp: ' + unicorn.Exp +'.');
+    displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + level + ' Current Exp: ' + exp +'.');
     animateArrival(function animateCallback() {
         displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
         WildRydes.map.unsetLocation();
