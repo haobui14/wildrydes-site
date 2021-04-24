@@ -46,10 +46,10 @@ function completeRequest(result) {
     console.log('Response received from API: ', result);
     unicorn = result.Unicorn;
     pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-    unicorn.Experience = unicorn.Experience + 10;
-    if(unicorn.Experience === 50) {
+    unicorn.Exp = unicorn.Exp + 10;
+    if(unicorn.Exp === 50) {
         unicorn.Level = unicorn.Level + 1;
-        unicorn.Experience = 0;
+        unicorn.Exp = 0;
     }
     displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + unicorn.Level + ' Current Exp: ' + unicorn.Exp +'.');
     animateArrival(function animateCallback() {
