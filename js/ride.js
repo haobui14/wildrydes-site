@@ -44,7 +44,6 @@ var unicorn = result.Unicorn,
 function completeRequest(result) {
     var pronoun;
     console.log('Response received from API: ', result);
-    unicorn = result.Unicorn;
     pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
 //     exp = Number(unicorn.Exp);
 //     level = Number(unicorn.Level);
