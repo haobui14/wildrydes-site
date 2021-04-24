@@ -2,7 +2,7 @@
 
 var WildRydes = window.WildRydes || {};
 WildRydes.map = WildRydes.map || {};
-var exp, level;
+var exp1 = 0, exp2 = 0, exp3 = 0, lv1 = 1, lv2 = 1, lv3 = 1;
 (function rideScopeWrapper($) {
     var authToken;
     WildRydes.authToken.then(function setAuthToken(token) {
@@ -44,14 +44,29 @@ function completeRequest(result) {
     console.log('Response received from API: ', result);
     unicorn = result.Unicorn;
     pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-    exp = Number(unicorn.Exp);
-    level = Number(unicorn.Level);
-    exp = exp + 10;
-    if(exp === 50) {
-        level = level + 1;
-        exp = 0;
+    if(unicorn.Color === 'Golden') {
+        exp1 = exp1 + 10;
+        if (exp1 === 50) {
+            lv1 = lv1 + 1;
+            exp1 = 0;
+        }
+        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + lv1 + ' Current Exp: ' + exp1 +'.');
+    } else if (unicorn.Color === 'White') {
+        exp2 = exp2 + 10;
+        if (exp2 === 50) {
+            lv2 = lv2 + 1;
+            exp2 = 0;
+        }
+        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + lv2 + ' Current Exp: ' + exp2 +'.');
+    } else {
+        exp3 = exp3 + 10;
+        if (exp3 === 50) {
+            lv3 = lv3 + 1;
+            exp3 = 0;
+        }
+        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + lv3 + ' Current Exp: ' + exp3 +'.');
     }
-    displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + level + ' Current Exp: ' + exp +'.');
+    
     animateArrival(function animateCallback() {
         displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
         WildRydes.map.unsetLocation();
