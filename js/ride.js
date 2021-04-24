@@ -38,20 +38,27 @@ WildRydes.map = WildRydes.map || {};
         });
     }
 
-    function completeRequest(result) {
-        var unicorn;
-        var pronoun;
-        console.log('Response received from API: ', result);
-        unicorn = result.Unicorn;
-        pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.');
-        animateArrival(function animateCallback() {
-            displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
-            WildRydes.map.unsetLocation();
-            $('#request').prop('disabled', 'disabled');
-            $('#request').text('Set Pickup');
-        });
+function completeRequest(result) {
+    var unicorn;
+    var pronoun;
+    var exp;
+    var level;
+    console.log('Response received from API: ', result);
+    unicorn = result.Unicorn;
+    pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
+    unicorn.Experience = unicorn.Experience + 10;
+    if(unicorn.Experience === 50) {
+        unicorn.Level = unicorn.Level + 1;
+        unicorn.Experience = 0;
     }
+    displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + unicorn.Level + ' Current Exp: ' + unicorn.Exp +'.');
+    animateArrival(function animateCallback() {
+        displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
+        WildRydes.map.unsetLocation();
+        $('#request').prop('disabled', 'disabled');
+        $('#request').text('Set Pickup');
+    });
+}
 
     // Register click handler for #request button
     $(function onDocReady() {
