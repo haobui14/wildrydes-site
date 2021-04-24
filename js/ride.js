@@ -79,6 +79,7 @@ WildRydes.map = WildRydes.map || {};
     function handleRequestClick(event) {
         var pickupLocation = WildRydes.map.selectedPoint;
         event.preventDefault();
+        document.getElementsByTagName('audio')[0].play();
         requestUnicorn(pickupLocation);
     }
 
