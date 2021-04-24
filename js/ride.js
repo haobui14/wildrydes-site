@@ -2,7 +2,7 @@
 
 var WildRydes = window.WildRydes || {};
 WildRydes.map = WildRydes.map || {};
-
+var exp, level;
 (function rideScopeWrapper($) {
     var authToken;
     WildRydes.authToken.then(function setAuthToken(token) {
@@ -38,7 +38,6 @@ WildRydes.map = WildRydes.map || {};
         });
     }
 
-var exp, level;
 function completeRequest(result) {
     var unicorn;
     var pronoun;
