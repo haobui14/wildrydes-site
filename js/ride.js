@@ -38,16 +38,16 @@ WildRydes.map = WildRydes.map || {};
         });
     }
 
+var unicorn = result.Unicorn,  
+    exp = Number(unicorn.Exp),
+    level = Number(unicorn.Level);
 function completeRequest(result) {
-    var unicorn;
     var pronoun;
-    var exp;
-    var level;
     console.log('Response received from API: ', result);
     unicorn = result.Unicorn;
     pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-    exp = Number(unicorn.Exp);
-    level = Number(unicorn.Level);
+//     exp = Number(unicorn.Exp);
+//     level = Number(unicorn.Level);
     exp = exp + 10;
     if(exp === 50) {
         level = level + 1;
