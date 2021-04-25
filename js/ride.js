@@ -104,11 +104,11 @@ function completeRequest(result) {
         var pickupLocation = WildRydes.map.selectedPoint;
         event.preventDefault();
         document.getElementsById('horse')[0].play();
-        if (value === 1) {
-            document.getElementsById('hb1')[0].play();
-        } else if (value === 2) {
-            document.getElementsById('hb2')[0].play();
-        } else {document.getElementsById('hb1')[0].play();}
+        //if (value === 1) {
+        //    document.getElementsById('hb1')[0].play();
+        //} else if (value === 2) {
+        //    document.getElementsById('hb2')[0].play();
+        //} else {document.getElementsById('hb1')[0].play();}
         requestUnicorn(pickupLocation);
     }
 
