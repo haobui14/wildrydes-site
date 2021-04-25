@@ -48,6 +48,7 @@ function completeRequest(result) {
     if(unicorn.Color === 'Golden') {
         exp1 = exp1 + 10;
         value = 1;
+        document.getElementsByTagName('audio')[1].play();
         if (exp1 === 50) {
             lv1 = lv1 + 1;
             exp1 = 0;
@@ -56,6 +57,7 @@ function completeRequest(result) {
     } else if (unicorn.Color === 'White') {
         exp2 = exp2 + 10;
         value = 2;
+        document.getElementsByTagName('audio')[2].play();
         if (exp2 === 50) {
             lv2 = lv2 + 1;
             exp2 = 0;
@@ -64,6 +66,7 @@ function completeRequest(result) {
     } else {
         exp3 = exp3 + 10;
         value = 3; 
+        document.getElementsByTagName('audio')[3].play();
         if (exp3 === 50) {
             lv3 = lv3 + 1;
             exp3 = 0;
@@ -105,11 +108,11 @@ function completeRequest(result) {
         var pickupLocation = WildRydes.map.selectedPoint;
         event.preventDefault();
         document.getElementsByTagName('audio')[0].play();
-        if (value === 1) {
-           document.getElementsByTagName('audio')[1].play();
-        } else if (value === 2) {
-           document.getElementsByTagName('audio')[2].play();
-        } else {document.getElementsByTagName('audio')[3].play();}
+        //if (value === 1) {
+        //   
+        //} else if (value === 2) {
+        //   
+        //} else {document.getElementsByTagName('audio')[3].play();}
         requestUnicorn(pickupLocation);
     }
 
