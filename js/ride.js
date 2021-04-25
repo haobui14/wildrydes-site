@@ -2,7 +2,7 @@
 
 var WildRydes = window.WildRydes || {};
 WildRydes.map = WildRydes.map || {};
-var exp1 = 0, exp2 = 0, exp3 = 0, lv1 = 1, lv2 = 1, lv3 = 1, value = 4;
+var exp1 = 0, exp2 = 0, exp3 = 0, lv1 = 1, lv2 = 1, lv3 = 1, value;
 (function rideScopeWrapper($) {
     var authToken;
     WildRydes.authToken.then(function setAuthToken(token) {
