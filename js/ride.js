@@ -48,7 +48,7 @@ function completeRequest(result) {
         exp1 = exp1 + 10;
         value = 1;
         document.getElementsByTagName('audio')[1].play();
-        if (exp1 === 20) {
+        if (exp1 === 30) {
             lv1 = lv1 + 1;
             exp1 = 0;
         }
@@ -58,7 +58,7 @@ function completeRequest(result) {
         exp2 = exp2 + 10;
         value = 2;
         document.getElementsByTagName('audio')[2].play();
-        if (exp2 === 20) {
+        if (exp2 === 30) {
             lv2 = lv2 + 1;
             exp2 = 0;
         }
@@ -68,7 +68,7 @@ function completeRequest(result) {
         exp3 = exp3 + 10;
         value = 3; 
         document.getElementsByTagName('audio')[3].play();
-        if (exp3 === 20) {
+        if (exp3 === 30) {
             lv3 = lv3 + 1;
             exp3 = 0;
         }
