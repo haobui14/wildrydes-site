@@ -5,7 +5,6 @@ WildRydes.map = WildRydes.map || {};
 var exp1 = 0, exp2 = 0, exp3 = 0, lv1 = 1, lv2 = 1, lv3 = 1;
 (function rideScopeWrapper($) {
     var authToken;
-    var value = 4;
     WildRydes.authToken.then(function setAuthToken(token) {
         if (token) {
             authToken = token;
@@ -49,29 +48,32 @@ function completeRequest(result) {
         exp1 = exp1 + 10;
         value = 1;
         document.getElementsByTagName('audio')[1].play();
-        if (exp1 === 50) {
+        if (exp1 === 20) {
             lv1 = lv1 + 1;
             exp1 = 0;
         }
-        displayUpdate('Unicorn name: ' + unicorn.Name + '. Color: ' + unicorn.Color +  '\nUnicorn level: ' + lv1 + ' Current Exp: ' + exp1 +'.');
+        displayUpdate('Name: ' + unicorn.Name + '. Color: ' + unicorn.Color +'.');
+        displayUpdate('Level: ' + lv3 + ' Current Exp: ' + exp3 +'.');
     } else if (unicorn.Color === 'White') {
         exp2 = exp2 + 10;
         value = 2;
         document.getElementsByTagName('audio')[2].play();
-        if (exp2 === 50) {
+        if (exp2 === 20) {
             lv2 = lv2 + 1;
             exp2 = 0;
         }
-        displayUpdate('Unicorn name: ' + unicorn.Name + '. Color: ' + unicorn.Color +  '\nUnicorn level: ' + lv2 + ' Current Exp: ' + exp2 +'.');
+        displayUpdate('Name: ' + unicorn.Name + '. Color: ' + unicorn.Color +'.');
+        displayUpdate('Level: ' + lv2 + ' Current Exp: ' + exp2 +'.');
     } else {
         exp3 = exp3 + 10;
         value = 3; 
         document.getElementsByTagName('audio')[3].play();
-        if (exp3 === 50) {
+        if (exp3 === 20) {
             lv3 = lv3 + 1;
             exp3 = 0;
         }
-        displayUpdate('Unicorn name: ' + unicorn.Name + '. Color: ' + unicorn.Color +  '\nUnicorn level: ' + lv3 + ' Current Exp: ' + exp3 +'.');
+        displayUpdate('Name: ' + unicorn.Name + '. Color: ' + unicorn.Color +'.');
+        displayUpdate('Level: ' + lv3 + ' Current Exp: ' + exp3 +'.');
     }
     
     animateArrival(function animateCallback() {
@@ -108,11 +110,6 @@ function completeRequest(result) {
         var pickupLocation = WildRydes.map.selectedPoint;
         event.preventDefault();
         document.getElementsByTagName('audio')[0].play();
-        //if (value === 1) {
-        //   
-        //} else if (value === 2) {
-        //   
-        //} else {document.getElementsByTagName('audio')[3].play();}
         requestUnicorn(pickupLocation);
     }
 
