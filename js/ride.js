@@ -53,7 +53,7 @@ function completeRequest(result) {
             exp1 = 0;
         }
         displayUpdate('Name: ' + unicorn.Name + '. Color: ' + unicorn.Color +'.');
-        displayUpdate('Level: ' + lv3 + ' Current Exp: ' + exp3 +'.');
+        displayUpdate('Level: ' + lv1 + ' Current Exp: ' + exp1 +'.');
     } else if (unicorn.Color === 'White') {
         exp2 = exp2 + 10;
         value = 2;
