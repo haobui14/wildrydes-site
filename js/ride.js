@@ -51,7 +51,7 @@ function completeRequest(result) {
             exp1 = 0;
             value = 1;
         }
-        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + lv1 + ' Current Exp: ' + exp1 +'.');
+        displayUpdate('Unicorn name: ' + unicorn.Name + '. Color: ' + unicorn.Color +  '\nUnicorn level: ' + lv1 + ' Current Exp: ' + exp1 +'.');
     } else if (unicorn.Color === 'White') {
         exp2 = exp2 + 10;
         if (exp2 === 50) {
@@ -59,7 +59,7 @@ function completeRequest(result) {
             exp2 = 0;
             value = 2;
         }
-        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + lv2 + ' Current Exp: ' + exp2 +'.');
+        displayUpdate('Unicorn name: ' + unicorn.Name + '. Color: ' + unicorn.Color +  '\nUnicorn level: ' + lv2 + ' Current Exp: ' + exp2 +'.');
     } else {
         exp3 = exp3 + 10;
         if (exp3 === 50) {
@@ -67,11 +67,10 @@ function completeRequest(result) {
             exp3 = 0;
             value = 3; 
         }
-        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + lv3 + ' Current Exp: ' + exp3 +'.');
+        displayUpdate('Unicorn name: ' + unicorn.Name + '. Color: ' + unicorn.Color +  '\nUnicorn level: ' + lv3 + ' Current Exp: ' + exp3 +'.');
     }
     
     animateArrival(function animateCallback() {
-        displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
         WildRydes.map.unsetLocation();
         $('#request').prop('disabled', 'disabled');
         $('#request').text('Set Pickup');
