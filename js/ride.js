@@ -102,7 +102,7 @@ function completeRequest(result) {
     function handleRequestClick(event) {
         var pickupLocation = WildRydes.map.selectedPoint;
         event.preventDefault();
-        document.getElementsByTagName('audio')[0].play();
+        document.getElementsById("horse")[0].play();
         requestUnicorn(pickupLocation);
     }
 
