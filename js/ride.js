@@ -2,7 +2,7 @@
 
 var WildRydes = window.WildRydes || {};
 WildRydes.map = WildRydes.map || {};
-var exp1 = 0, exp2 = 0, exp3 = 0, lv1 = 1, lv2 = 1, lv3 = 1;
+var exp1 = 0, exp2 = 0, exp3 = 0, lv1 = 1, lv2 = 1, lv3 = 1, value = 4;
 (function rideScopeWrapper($) {
     var authToken;
     WildRydes.authToken.then(function setAuthToken(token) {
@@ -49,6 +49,7 @@ function completeRequest(result) {
         if (exp1 === 50) {
             lv1 = lv1 + 1;
             exp1 = 0;
+            value = 1;
         }
         displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + lv1 + ' Current Exp: ' + exp1 +'.');
     } else if (unicorn.Color === 'White') {
@@ -56,6 +57,7 @@ function completeRequest(result) {
         if (exp2 === 50) {
             lv2 = lv2 + 1;
             exp2 = 0;
+            value = 2;
         }
         displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + lv2 + ' Current Exp: ' + exp2 +'.');
     } else {
@@ -63,6 +65,7 @@ function completeRequest(result) {
         if (exp3 === 50) {
             lv3 = lv3 + 1;
             exp3 = 0;
+            value = 3; 
         }
         displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.\nUnicorn level: ' + lv3 + ' Current Exp: ' + exp3 +'.');
     }
@@ -101,7 +104,12 @@ function completeRequest(result) {
     function handleRequestClick(event) {
         var pickupLocation = WildRydes.map.selectedPoint;
         event.preventDefault();
-        document.getElementsByTagName('audio')[0].play();
+        document.getElementsById('horse')[0].play();
+        if (value === 1) {
+            document.getElementsById('hb1')[0].play();
+        } else if (value === 2) {
+            document.getElementsById('hb2')[0].play();
+        } else {document.getElementsById('hb1')[0].play();}
         requestUnicorn(pickupLocation);
     }
 
